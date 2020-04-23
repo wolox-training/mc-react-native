@@ -2,6 +2,7 @@ import BookItem from './components/BookItem';
 import React from 'react';
 import {FlatList, View} from 'react-native';
 import {LibraryData} from '../../../constants/constants';
+import LibrarySeparator from './components/LibrarySeparator';
 import listStyles from './styles';
 
 interface dataItem {
@@ -25,12 +26,12 @@ const Library = () => {
     />
   );
   return (
-    <View>
+    <View style={listStyles.container}>
       <FlatList
-        style={listStyles.container}
         data={LibraryData}
         renderItem={renderItem}
         keyExtractor={(item: {id: any}) => item.id}
+        ItemSeparatorComponent={LibrarySeparator}
       />
     </View>
   );

@@ -1,8 +1,10 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../../../../constants/colors';
 
 export default StyleSheet.create({
   bookContainer: {
-    alignItems: 'stretch',
+    alignSelf: 'center',
+    backgroundColor: colors.white,
     borderRadius: 5,
     flex: 1,
     flexDirection: 'row',
