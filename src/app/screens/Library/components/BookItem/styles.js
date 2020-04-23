@@ -17,6 +17,7 @@ export default StyleSheet.create({
     height: 60,
     marginLeft: 15,
     width: 40,
+    resizeMode: 'contain',
   },
   description: {
     alignItems: 'flex-start',
