@@ -3,7 +3,7 @@ import React from 'react';
 import {FlatList, View} from 'react-native';
 import {LibraryData} from '../../../constants/constants';
 import LibrarySeparator from './components/LibrarySeparator';
-import listStyles from './styles';
+import styles from './styles';
 
 interface dataItem {
   item: {
@@ -25,12 +25,13 @@ const Library = () => {
       uri={item.image_url}
     />
   );
+  const keyExtractor = (item: {id: number}) => item.id.toString();
   return (
-    <View style={listStyles.container}>
+    <View style={styles.container}>
       <FlatList
         data={LibraryData}
         renderItem={renderItem}
-        keyExtractor={(item: {id: any}) => item.id}
+        keyExtractor={keyExtractor}
         ItemSeparatorComponent={LibrarySeparator}
       />
     </View>

@@ -1,9 +1,9 @@
 import {View} from 'react-native';
 import React from 'react';
-import librarySeparatorStyle from './styles';
+import styles from './styles';
 
 const LibrarySeparator = () => {
-  return <View style={librarySeparatorStyle.container} />;
+  return <View style={styles.container} />;
 };
 
 export default LibrarySeparator;
