@@ -17,15 +17,11 @@ interface dataItem {
   };
 }
 const Library = () => {
-  const renderItem = ({item}: dataItem) => (
-    <BookItem
-      key={item.id}
-      title={item.title}
-      author={item.author}
-      uri={item.image_url}
-    />
+  console.log(LibraryData);
+  const renderItem = ({item: {id, title, author, image_url}}: dataItem) => (
+    <BookItem key={id} title={title} author={author} uri={image_url} />
   );
-  const keyExtractor = (item: {id: number}) => item.id.toString();
+  const keyExtractor = (item: {id: number}) => `${item.id}`;
   return (
     <View style={styles.container}>
       <FlatList
