@@ -17,7 +17,6 @@ interface dataItem {
   };
 }
 const Library = () => {
-  console.log(LibraryData);
   const renderItem = ({item: {id, title, author, image_url}}: dataItem) => (
     <BookItem key={id} title={title} author={author} uri={image_url} />
   );
