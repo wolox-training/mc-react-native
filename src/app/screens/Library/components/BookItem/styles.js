@@ -1,8 +1,10 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../../../../constants/colors';
 
 export default StyleSheet.create({
   bookContainer: {
-    alignItems: 'stretch',
+    alignSelf: 'center',
+    backgroundColor: colors.white,
     borderRadius: 5,
     flex: 1,
     flexDirection: 'row',
@@ -17,6 +19,7 @@ export default StyleSheet.create({
     height: 60,
     marginLeft: 15,
     width: 40,
+    resizeMode: 'contain',
   },
   description: {
     alignItems: 'flex-start',
