@@ -12,12 +12,11 @@ interface Props {
 
 function BookItem({title, author, uri}: Props) {
   const navigation = useNavigation();
+  const redirectBookDetail = () => {
+    navigation.navigate('BookDetail');
+  };
   return (
-    <TouchableOpacity
-      style={styles.bookContainer}
-      onPress={() => {
-        navigation.navigate('BookDetail');
-      }}>
+    <TouchableOpacity style={styles.bookContainer} onPress={redirectBookDetail}>
       <Image source={uri ? {uri} : imageMissing} style={styles.cover} />
       <View style={styles.description}>
         <Text style={styles.title}>{title}</Text>
