@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from '../../../../../constants/colors';
 
 export default StyleSheet.create({
@@ -13,28 +13,28 @@ export default StyleSheet.create({
     maxHeight: 90,
     maxWidth: 335,
     padding: 15,
-    width: '100%',
+    width: '100%'
   },
   cover: {
     height: 60,
     marginLeft: 15,
     width: 40,
-    resizeMode: 'contain',
+    resizeMode: 'contain'
   },
   description: {
     alignItems: 'flex-start',
     flex: 1,
     flexDirection: 'column',
     marginLeft: 19,
-    paddingBottom: 3,
+    paddingBottom: 3
   },
   title: {
     fontSize: 17,
     fontWeight: 'bold',
-    lineHeight: 20,
+    lineHeight: 20
   },
   author: {
     fontSize: 15,
-    lineHeight: 18,
-  },
+    lineHeight: 18
+  }
 });

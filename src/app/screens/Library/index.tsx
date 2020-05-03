@@ -1,7 +1,8 @@
-import BookItem from './components/BookItem';
+/* eslint-disable camelcase */
 import React from 'react';
-import {FlatList, View} from 'react-native';
-import {LibraryData} from '../../../constants/constants';
+import { FlatList, View } from 'react-native';
+import BookItem from './components/BookItem';
+import { LibraryData } from '../../../constants/constants';
 import LibrarySeparator from './components/LibrarySeparator';
 import styles from './styles';
 
@@ -17,10 +18,10 @@ interface dataItem {
   };
 }
 const Library = () => {
-  const renderItem = ({item: {id, title, author, image_url}}: dataItem) => (
-    <BookItem key={id} title={title} author={author} uri={image_url} />
+  const renderItem = ({ item: { id, title, author, image_url, year, genre } }: dataItem) => (
+    <BookItem key={id} title={title} author={author} imageUri={image_url} year={year} genre={genre} />
   );
-  const keyExtractor = (item: {id: number}) => `${item.id}`;
+  const keyExtractor = (item: { id: number }) => `${item.id}`;
   return (
     <View style={styles.container}>
       <FlatList
