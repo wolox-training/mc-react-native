@@ -5,7 +5,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.polar,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    marginTop: 20
   },
   texto: {
     fontWeight: 'bold'
