@@ -13,10 +13,13 @@ interface Props {
 }
 const BookDetail = ({ title, author, imageUri, year, genre }: Props) => {
   return (
-    <View style={[styles.container, styles.containerShadow]}>
-      <View style={styles.top}>
-        <Image source={imageUri ? { uri: imageUri } : imageMissing} style={styles.cover} />
-        <View style={styles.description}>
+    <View style={[styles.container, styles.containerShadow, styles.fullScreen]}>
+      <View style={[styles.top, styles.fullScreen]}>
+        <Image
+          source={imageUri ? { uri: imageUri } : imageMissing}
+          style={[styles.cover, styles.fullScreen]}
+        />
+        <View style={[styles.description, styles.fullScreen]}>
           <Text style={styles.title}> {title} </Text>
           <Text style={[styles.text, styles.bookStatus]}> Available </Text>
           <Text style={styles.text}> {author} </Text>

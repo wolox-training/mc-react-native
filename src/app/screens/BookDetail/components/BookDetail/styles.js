@@ -3,16 +3,12 @@ import colors from '../../../../../constants/colors';
 
 export default StyleSheet.create({
   cover: {
-    height: 105,
-    width: 69,
-    maxHeight: '100%',
-    maxWidth: '100%'
+    maxHeight: 105,
+    maxWidth: 69
   },
   container: {
     flex: 1,
     flexDirection: 'column',
-    height: '100%',
-    width: '100%',
     maxHeight: 270,
     maxWidth: 335,
     borderRadius: 5,
@@ -32,8 +28,6 @@ export default StyleSheet.create({
   top: {
     flex: 1,
     flexDirection: 'row',
-    height: '100%',
-    width: '100%',
     maxHeight: 105,
     maxWidth: 285,
     marginTop: 15,
@@ -47,9 +41,7 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
     marginLeft: 20,
     maxHeight: 111,
-    maxWidth: 196,
-    height: '100%',
-    width: '100%'
+    maxWidth: 196
   },
   title: {
     fontWeight: 'bold',
@@ -67,5 +59,9 @@ export default StyleSheet.create({
   text: {
     fontSize: 15,
     lineHeight: 18
+  },
+  fullScreen: {
+    height: '100%',
+    width: '100%'
   }
 });

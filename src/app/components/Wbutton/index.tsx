@@ -7,12 +7,9 @@ interface Props {
   inverted?: boolean;
 }
 const Wbutton = ({ text, inverted = false }: Props) => {
-  const buttonType = inverted ? [styles.button, styles.inverted] : styles.button;
-  const textType = inverted ? [styles.text, styles.inverted] : styles.text;
-
   return (
-    <TouchableOpacity style={buttonType}>
-      <Text style={textType}> {text} </Text>
+    <TouchableOpacity style={[styles.button, inverted && styles.inverted]}>
+      <Text style={[styles.text, inverted && styles.inverted]}> {text} </Text>
     </TouchableOpacity>
   );
 };
