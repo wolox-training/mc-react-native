@@ -18,8 +18,7 @@ const App = () => {
     headerBackground: () => <Image style={styles.imageHeader} source={require('./assets/bc_nav_bar.png')} />,
     headerStyle: styles.headerStyle,
     cardStyle: styles.headerCard,
-    headerTitleStyle: styles.headerTitle,
-    headerTitleAlign: 'center'
+    headerTitleStyle: styles.headerTitle
   };
   return (
     <NavigationContainer>
