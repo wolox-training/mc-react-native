@@ -1,3 +1,6 @@
+const avatar1 = require('../app/assets/avatars/img_user1.png');
+const avatar2 = require('../app/assets/avatars/img_user2.png');
+
 export const LibraryData = [
   {
     id: 1,
@@ -79,9 +82,50 @@ export const LibraryData = [
     genre: 'fiction',
     publisher: 'Crown Publishing Group',
     year: '2011',
-    image_url:
-      'http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg',
-  },
+    image_url: 'http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg'
+  }
 ];
 
 export const imageMissing = require('../app/assets/image-missing.png');
+
+export const Comments = [
+  {
+    id: 1,
+    name: 'Roberto',
+    lastname: 'Gallo',
+    comment:
+      'Es un libro fantastico que te llena el alma de alegria, una cosa extraordinaria jamás leída. 100% recomendado',
+    avatarImage: avatar1
+  },
+  {
+    id: 2,
+    name: 'Juan',
+    lastname: 'Alberti',
+    comment:
+      'Se ve bueno pero no tuve el tiempo de terminarlo, el autor te mete como 100 páginas solo para describirte un árbol. En fin, igual lo voy a termimnar algún día',
+    avatarImage: avatar2
+  },
+  {
+    id: 3,
+    name: 'María',
+    lastname: 'Castañera',
+    comment:
+      'Es maravilloooooso las cantidad de adjetivos que usa para referirse a una simple flor, deberia ser poeta.',
+    avatarImage: avatar1
+  },
+  {
+    id: 4,
+    name: 'Ana',
+    lastname: 'Sanchez',
+    comment: 'Quiero que me devuelvan el tiempo invertido en leer esto, tiene el peor final EVER',
+    avatarImage: avatar2
+  },
+  {
+    id: 5,
+    name: 'Marcelo',
+    lastname: 'Castrobarro',
+    comment:
+      'Y la parte 2 para cuando?? A ver si el author le mete ganas que dejó el final más abierto que las nalgas de Brasil en la semi mundial 2014',
+    avatarImage: avatar1
+  }
+];
