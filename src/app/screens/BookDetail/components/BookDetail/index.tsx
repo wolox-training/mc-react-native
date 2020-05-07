@@ -3,15 +3,9 @@ import { View, Text, Image } from 'react-native';
 import Wbutton from '../../../../components/Wbutton';
 import styles from './styles';
 import { imageMissing } from '../../../../../constants/constants';
+import { BookDetailInterface } from '../../../../interfaces';
 
-interface Props {
-  title: string;
-  author: string;
-  imageUri: string | null;
-  year: string;
-  genre: string;
-}
-const BookDetail = ({ title, author, imageUri, year, genre }: Props) => {
+const BookDetail = ({ title, author, imageUri, year, genre }: BookDetailInterface) => {
   return (
     <View style={[styles.container, styles.containerShadow, styles.fullScreen]}>
       <View style={[styles.top, styles.fullScreen]}>

@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   const headerOptions = {
-    headerBackImage: () => <Image style={styles.backImage} source={require('./assets/ic_back.png')} />,
+    headerBackImage: () => <Image style={styles.squareSmall} source={require('./assets/ic_back.png')} />,
     headerBackground: () => <Image style={styles.imageHeader} source={require('./assets/bc_nav_bar.png')} />,
     headerStyle: styles.headerStyle,
     cardStyle: styles.headerCard,

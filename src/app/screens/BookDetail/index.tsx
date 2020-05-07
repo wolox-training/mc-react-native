@@ -4,16 +4,11 @@ import BookDetail from './components/BookDetail';
 import Comment from './components/Comment';
 import styles from './styles';
 import { Comments } from '../../../constants/constants';
+import { BookDetailInterface } from '../../interfaces';
 
 interface Props {
   route: {
-    params: {
-      title: string;
-      author: string;
-      imageUri: string | null;
-      year: string;
-      genre: string;
-    };
+    params: BookDetailInterface;
   };
 }
 
