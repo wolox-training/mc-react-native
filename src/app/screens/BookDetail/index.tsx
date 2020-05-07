@@ -2,16 +2,11 @@ import React from 'react';
 import { View } from 'react-native';
 import BookDetail from './components/BookDetail';
 import styles from './styles';
+import { BookDetailInterface } from '../../interfaces';
 
 interface Props {
   route: {
-    params: {
-      title: string;
-      author: string;
-      imageUri: string | null;
-      year: string;
-      genre: string;
-    };
+    params: BookDetailInterface;
   };
 }
 
