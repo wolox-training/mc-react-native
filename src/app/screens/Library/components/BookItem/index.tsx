@@ -3,16 +3,9 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { imageMissing } from '../../../../../constants/constants';
+import { BookDetailInterface } from '../../../../interfaces';
 
-interface Props {
-  title: string;
-  author: string;
-  year: string;
-  genre: string;
-  imageUri: string | null;
-}
-
-function BookItem({ title, author, year, genre, imageUri }: Props) {
+function BookItem({ title, author, year, genre, imageUri }: BookDetailInterface) {
   const navigation = useNavigation();
   const redirectBookDetail = () => {
     navigation.navigate('BookDetail', { title, author, imageUri, year, genre });
