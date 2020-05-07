@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../constants/colors';
+import { squareSmall } from '../constants/globalStyles';
 
 export default StyleSheet.create({
   imageHeader: {
@@ -18,8 +19,5 @@ export default StyleSheet.create({
     fontWeight: '600',
     lineHeight: 20
   },
-  backImage: {
-    maxHeight: 20,
-    maxWidth: 20
-  }
+  squareSmall
 });
