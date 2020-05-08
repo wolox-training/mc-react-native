@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../../../../constants/colors';
 
+const smallNumber = 45;
+
 export default StyleSheet.create({
   container: {
     flex: 3,
@@ -11,8 +13,8 @@ export default StyleSheet.create({
     padding: 15
   },
   avatar: {
-    height: 45,
-    width: 45,
+    height: smallNumber,
+    width: smallNumber,
     resizeMode: 'contain',
     marginRight: 20
   },

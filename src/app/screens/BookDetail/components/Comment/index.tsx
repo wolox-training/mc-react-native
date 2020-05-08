@@ -4,7 +4,7 @@ import styles from './styles';
 import { imageMissing } from '../../../../../constants/constants';
 
 interface Props {
-  avatarImage: any;
+  avatarImage: string | null;
   name: string;
   lastName: string;
   comment: string;

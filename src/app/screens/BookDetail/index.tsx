@@ -34,7 +34,7 @@ function BookDetailView({ route }: Props) {
     setFullComments(!fullComments);
   };
   const selectTextForComments = fullComments ? 'Hide Comments' : 'View All';
-  const listFotter = () => {
+  const listFooter = () => {
     return (
       <TouchableOpacity style={styles.linkContainer} onPress={toggleComments}>
         <Text style={styles.linkText}> {selectTextForComments} </Text>
@@ -49,7 +49,7 @@ function BookDetailView({ route }: Props) {
           data={comments}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
-          ListFooterComponent={listFotter}
+          ListFooterComponent={listFooter}
         />
       </View>
     </View>
