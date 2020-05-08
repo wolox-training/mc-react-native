@@ -1,10 +1,11 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import BookDetail from './screens/BookDetail';
 import Library from './screens/Library';
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 
-declare const global: {HermesInternal: null | {}};
+// eslint-disable-next-line init-declarations
+declare const global: { HermesInternal: null | {} };
 
 const Stack = createStackNavigator();
 

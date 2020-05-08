@@ -4,10 +4,9 @@ import colors from '../../../constants/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.polar,
-    alignItems: 'stretch'
-  },
-  texto: {
-    fontWeight: 'bold'
+    flexDirection: 'column',
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    backgroundColor: colors.white
   }
 });
