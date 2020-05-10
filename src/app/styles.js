@@ -7,6 +7,9 @@ export default StyleSheet.create({
     resizeMode: 'stretch',
     width: '100%'
   },
+  tabIcons: {
+    resizeMode: 'stretch'
+  },
   headerStyle: {
     height: 102
   },
