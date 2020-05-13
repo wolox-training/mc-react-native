@@ -4,7 +4,8 @@ import colors from '../../../../../constants/colors';
 export default StyleSheet.create({
   cover: {
     maxHeight: 105,
-    maxWidth: 69
+    maxWidth: 69,
+    resizeMode: 'contain'
   },
   container: {
     flex: 1,

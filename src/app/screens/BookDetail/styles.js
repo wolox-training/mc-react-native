@@ -7,6 +7,7 @@ export default StyleSheet.create({
     flexDirection: 'column',
     paddingHorizontal: 20,
     alignItems: 'center',
-    backgroundColor: colors.white
+    backgroundColor: colors.polar,
+    marginTop: 20
   }
 });
