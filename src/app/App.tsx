@@ -3,6 +3,8 @@ import { Image, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 import styles from './styles';
 import colors from '../constants/colors';
 import BookDetail from './screens/BookDetail';
@@ -55,32 +57,34 @@ const icons = (focused: boolean, tabName: any) => {
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <StatusBar backgroundColor={colors.cerulean} />
-      <Tab.Navigator
-        initialRouteName="Library"
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, size }) => {
-            const iconName = route.name;
-            return (
-              <Image
-                source={icons(focused, iconName)}
-                style={[styles.tabIcons, { height: size, width: size }]}
-              />
-            );
-          }
-        })}
-        tabBarOptions={{
-          activeTintColor: colors.cerulean,
-          inactiveTintColor: colors.dustyGray
-        }}>
-        <Tab.Screen name="Library" component={LibraryStackScreen} />
-        <Tab.Screen name="Whislist" component={MissingView} />
-        <Tab.Screen name="Add New" component={MissingView} />
-        <Tab.Screen name="Rental" component={MissingView} />
-        <Tab.Screen name="Setting" component={MissingView} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <StatusBar backgroundColor={colors.cerulean} />
+        <Tab.Navigator
+          initialRouteName="Library"
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, size }) => {
+              const iconName = route.name;
+              return (
+                <Image
+                  source={icons(focused, iconName)}
+                  style={[styles.tabIcons, { height: size, width: size }]}
+                />
+              );
+            }
+          })}
+          tabBarOptions={{
+            activeTintColor: colors.cerulean,
+            inactiveTintColor: colors.dustyGray
+          }}>
+          <Tab.Screen name="Library" component={LibraryStackScreen} />
+          <Tab.Screen name="Whislist" component={MissingView} />
+          <Tab.Screen name="Add New" component={MissingView} />
+          <Tab.Screen name="Rental" component={MissingView} />
+          <Tab.Screen name="Setting" component={MissingView} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
