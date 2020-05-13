@@ -11,7 +11,8 @@ export default StyleSheet.create({
     width: 275,
     height: 44,
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 10
   },
   text: {
     fontSize: 15,

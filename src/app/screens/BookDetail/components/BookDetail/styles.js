@@ -8,13 +8,13 @@ export default StyleSheet.create({
     resizeMode: 'contain'
   },
   container: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'column',
     maxHeight: 270,
     maxWidth: 335,
     borderRadius: 5,
     backgroundColor: colors.white,
-    justifyContent: 'space-evenly'
+    marginBottom: 10
   },
   containerShadow: {
     shadowColor: colors.black,
