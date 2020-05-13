@@ -5,14 +5,14 @@ import BookDetail from './components/BookDetail';
 import Comment from './components/Comment';
 import styles from './styles';
 import { Comments } from '../../../constants/constants';
-import { BookDetailInterface } from '../../interfaces';
+import { BookDetailInterface, State, Books } from '../../interfaces';
 import actionCreators from '../../../redux/books/actions';
 
 interface Props {
   route: {
     params: BookDetailInterface;
   };
-  fullComments: boolean;
+  fullComments: Books;
   dispatch: any;
 }
 
@@ -27,6 +27,7 @@ interface dataComments {
 }
 
 function BookDetailView({ route, fullComments, dispatch }: Props) {
+  // TODO: Restore the all state function later.
   // const [fullComments, setFullComments] = useState(false);
   const { author, title, imageUri, year, genre } = route.params;
   const keyExtractor = (item: { id: number }) => `${item.id}`;
@@ -58,7 +59,7 @@ function BookDetailView({ route, fullComments, dispatch }: Props) {
   );
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: State) => {
   return {
     fullComments: state.fullComments
   };

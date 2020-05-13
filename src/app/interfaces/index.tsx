@@ -5,3 +5,11 @@ export interface BookDetailInterface {
   year: string;
   genre: string;
 }
+
+export interface Books {
+  fullComments: boolean;
+}
+
+export interface State {
+  fullComments: Books;
+}

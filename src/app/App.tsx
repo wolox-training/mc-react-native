@@ -55,6 +55,14 @@ const icons = (focused: boolean, tabName: any) => {
   return iconsRoute[iconToUse];
 };
 
+const screenOptions = ({ route }: any) => ({
+  tabBarIcon: ({ focused, size }: any) => {
+    return (
+      <Image source={icons(focused, route.name)} style={[styles.tabIcons, { height: size, width: size }]} />
+    );
+  }
+});
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -62,17 +70,7 @@ const App = () => {
         <StatusBar backgroundColor={colors.cerulean} />
         <Tab.Navigator
           initialRouteName="Library"
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, size }) => {
-              const iconName = route.name;
-              return (
-                <Image
-                  source={icons(focused, iconName)}
-                  style={[styles.tabIcons, { height: size, width: size }]}
-                />
-              );
-            }
-          })}
+          screenOptions={screenOptions}
           tabBarOptions={{
             activeTintColor: colors.cerulean,
             inactiveTintColor: colors.dustyGray
