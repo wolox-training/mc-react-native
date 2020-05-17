@@ -5,10 +5,14 @@ import styles from './styles';
 interface Props {
   text: string;
   inverted?: boolean;
+  whiteBorder?: boolean;
+  onPress?: Function;
 }
-const Wbutton = ({ text, inverted = false }: Props) => {
+const Wbutton = ({ text, inverted = false, whiteBorder = false, onPress }: Props) => {
   return (
-    <TouchableOpacity style={[styles.button, inverted && styles.inverted]}>
+    <TouchableOpacity
+      style={[styles.button, inverted && styles.inverted, whiteBorder && styles.whiteBorder]}
+      onPress={onPress}>
       <Text style={[styles.text, inverted && styles.inverted]}> {text} </Text>
     </TouchableOpacity>
   );
