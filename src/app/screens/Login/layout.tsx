@@ -5,9 +5,11 @@ import styles from './styles';
 
 interface State {
   redirectHome: Function;
+  setEmail: Function;
+  setPwd: Function;
 }
 
-const LoginScreen = ({ redirectHome }: State) => {
+const LoginScreen = ({ redirectHome, setEmail, setPwd }: State) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('@app/assets/general/bc_inicio.png')} style={styles.image}>
@@ -16,6 +18,7 @@ const LoginScreen = ({ redirectHome }: State) => {
           <TextInput
             style={styles.text}
             textAlign="center"
+            onChangeText={setEmail}
             placeholder="Email"
             keyboardType="email-address"
           />
@@ -24,6 +27,7 @@ const LoginScreen = ({ redirectHome }: State) => {
             placeholder="password"
             autoCompleteType="password"
             textAlign="center"
+            onChangeText={setPwd}
             secureTextEntry={true}
             textContentType="password"
           />
