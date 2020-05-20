@@ -5,5 +5,6 @@ export default {
   black: '#000000',
   cerulean: '#00ADEE',
   tundora: '#4A4A4A',
-  dustyGray: '#9B9B9B'
+  dustyGray: '#9B9B9B',
+  red: '#FF0000'
 };
