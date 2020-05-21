@@ -1,5 +1,11 @@
-import { createStore } from 'redux';
-import reducer from './books/reducer';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import bookReducer from './books/reducer';
+import loginReducer from './login/reducer';
 
-// TODO: Restore when I have multiple reducer.
-export default createStore(reducer);
+const reducers = combineReducers({
+  loginReducer,
+  bookReducer
+});
+
+export default createStore(reducers, applyMiddleware(thunk));
