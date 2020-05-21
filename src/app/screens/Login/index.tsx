@@ -6,6 +6,7 @@ import LoginScreen from './layout';
 function Login() {
   const [email, setEmail] = useState();
   const [pwd, setPwd] = useState();
+  const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
   const redirectHome = () => {
     // TODO: This is only for test the navigability, must be change later for a real authentication
@@ -14,7 +15,18 @@ function Login() {
     }
     console.warn('Invalid Password or Email');
   };
-  return <LoginScreen redirectHome={redirectHome} setEmail={setEmail} setPwd={setPwd} />;
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  return (
+    <LoginScreen
+      redirectHome={redirectHome}
+      setEmail={setEmail}
+      setPwd={setPwd}
+      handleShowPassword={handleShowPassword}
+      showPassword={showPassword}
+    />
+  );
 }
 
 export default Login;

@@ -21,8 +21,15 @@ const styles = StyleSheet.create({
     color: colors.dustyGrey,
     fontSize: 30,
     fontWeight: 'bold',
-    width: 275,
-    margin: 10
+    width: 275
+  },
+  passwordContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    maxHeight: 80
+  },
+  logoImage: {
+    marginBottom: 100
   }
 });
 
