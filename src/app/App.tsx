@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Provider } from 'react-redux';
+import Login from '@screens/Login';
 import store from '../redux/store';
 import styles from './styles';
 import colors from '../constants/colors';
@@ -16,6 +17,7 @@ declare const global: { HermesInternal: null | {} };
 
 const LibraryStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const InitialStack = createStackNavigator();
 
 const LibraryStackScreen = () => {
   const headerOptions = {
@@ -63,24 +65,39 @@ const screenOptions = ({ route }: any) => ({
   }
 });
 
+const tabNavigator = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName="Library"
+      screenOptions={screenOptions}
+      tabBarOptions={{
+        activeTintColor: colors.cerulean,
+        inactiveTintColor: colors.dustyGray
+      }}>
+      <Tab.Screen name="Library" component={LibraryStackScreen} />
+      <Tab.Screen name="Whislist" component={MissingView} />
+      <Tab.Screen name="Add New" component={MissingView} />
+      <Tab.Screen name="Rental" component={MissingView} />
+      <Tab.Screen name="Setting" component={MissingView} />
+    </Tab.Navigator>
+  );
+};
+
+const InitialStackScreen = () => {
+  return (
+    <InitialStack.Navigator initialRouteName="Login" headerMode="none">
+      <InitialStack.Screen name="Login" component={Login} />
+      <InitialStack.Screen name="TabNavigator" component={tabNavigator} />
+    </InitialStack.Navigator>
+  );
+};
+
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
         <StatusBar backgroundColor={colors.cerulean} />
-        <Tab.Navigator
-          initialRouteName="Library"
-          screenOptions={screenOptions}
-          tabBarOptions={{
-            activeTintColor: colors.cerulean,
-            inactiveTintColor: colors.dustyGray
-          }}>
-          <Tab.Screen name="Library" component={LibraryStackScreen} />
-          <Tab.Screen name="Whislist" component={MissingView} />
-          <Tab.Screen name="Add New" component={MissingView} />
-          <Tab.Screen name="Rental" component={MissingView} />
-          <Tab.Screen name="Setting" component={MissingView} />
-        </Tab.Navigator>
+        <InitialStackScreen />
       </NavigationContainer>
     </Provider>
   );

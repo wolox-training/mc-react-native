@@ -27,5 +27,8 @@ export default StyleSheet.create({
     backgroundColor: colors.cerulean,
     borderColor: colors.cerulean,
     color: colors.white
+  },
+  whiteBorder: {
+    borderColor: colors.white
   }
 });
