@@ -14,7 +14,15 @@ export interface State {
   bookReducer: { fullComments: Books };
   loginReducer: {
     token: string;
+    client: string;
+    uid: string;
     error: string;
     waitingResponse: boolean;
   };
+}
+
+export interface StorageLoginData {
+  accessToken: string;
+  client: string;
+  uid: string;
 }

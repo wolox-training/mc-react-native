@@ -1,5 +1,7 @@
 const initialState = {
   token: '',
+  client: '',
+  uid: '',
   waitingResponse: false,
   error: ''
 };
@@ -14,6 +16,8 @@ const reducer = (state = initialState, action) => {
     case 'SIGN_IN_SUCCESS':
       return {
         token: payload.token,
+        client: payload.client,
+        uid: payload.uid,
         waitingResponse: payload.waitingResponse,
         error: payload.error
       };
