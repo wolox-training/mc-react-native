@@ -8,6 +8,7 @@ import LoginScreen from './layout';
 function Login() {
   const [email, setEmail] = useState();
   const [pwd, setPwd] = useState();
+  const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const signIn = () => dispatch(actionCreators.signIn(email, pwd));
@@ -27,7 +28,18 @@ function Login() {
     }
   });
 
-  return <LoginScreen redirectHome={redirectHome} setEmail={setEmail} setPwd={setPwd} />;
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  return (
+    <LoginScreen
+      redirectHome={redirectHome}
+      setEmail={setEmail}
+      setPwd={setPwd}
+      handleShowPassword={handleShowPassword}
+      showPassword={showPassword}
+    />
+  );
 }
 
 export default Login;
