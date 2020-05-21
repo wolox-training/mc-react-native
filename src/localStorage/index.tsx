@@ -26,3 +26,8 @@ export const getLoginData = async () => {
 
   return data;
 };
+
+export const wipeLoginData = async () => {
+  const keys = ['@accessToken', '@client', '@uid'];
+  await AsyncStorage.multiRemove(keys);
+};
