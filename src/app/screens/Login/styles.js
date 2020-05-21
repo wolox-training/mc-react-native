@@ -22,8 +22,15 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'left',
     fontWeight: 'bold',
-    width: 275,
-    margin: 10
+    width: 275
+  },
+  passwordContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    maxHeight: 80
+  },
+  logoImage: {
+    marginBottom: 100
   },
   errorText: {
     color: colors.red,
