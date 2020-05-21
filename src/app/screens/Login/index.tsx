@@ -11,6 +11,7 @@ function Login() {
   const [email, setEmail] = useState();
   const [pwd, setPwd] = useState();
   const [inputError, setInputError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const signIn = () => dispatch(actionCreators.signIn(email, pwd));
@@ -39,6 +40,9 @@ function Login() {
     }
   });
 
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <LoginScreen
       redirectHome={redirectHome}
@@ -48,6 +52,8 @@ function Login() {
       hasError={hasError}
       inputError={inputError}
       validateEmail={validateEmail}
+      handleShowPassword={handleShowPassword}
+      showPassword={showPassword}
     />
   );
 }
