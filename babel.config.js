@@ -16,7 +16,7 @@ module.exports = {
           '@services': './src/services',
           '@utils': './src/utils',
           '@components': './src/app/components',
-          '@localStore': './src/localStorage'
+          '@localStore': './src/services/localStorage'
         }
       }
     ]
