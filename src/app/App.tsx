@@ -11,6 +11,7 @@ import colors from '../constants/colors';
 import BookDetail from './screens/BookDetail';
 import Library from './screens/Library';
 import MissingView from './components/MissingView';
+import LogoutHeader from './components/LogoutHeader';
 
 // eslint-disable-next-line init-declarations
 declare const global: { HermesInternal: null | {} };
@@ -25,7 +26,8 @@ const LibraryStackScreen = () => {
     headerBackground: () => <Image style={styles.imageHeader} source={require('./assets/bc_nav_bar.png')} />,
     headerStyle: styles.headerStyle,
     cardStyle: styles.headerCard,
-    headerTitleStyle: styles.headerTitle
+    headerTitleStyle: styles.headerTitle,
+    headerLeft: () => <LogoutHeader />
   };
   return (
     <LibraryStack.Navigator initialRouteName="Library" screenOptions={headerOptions}>
