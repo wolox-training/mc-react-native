@@ -1,9 +1,11 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
+const [tokenKey, clientKey, uidKey] = ['@accessToken', '@client', '@uid'];
+
 export const setLoginData = (accessToken: string, client: string, uid: string) => {
-  const accessTokenPair = ['@accessToken', accessToken];
-  const clientPair = ['@client', client];
-  const uidPair = ['@uid', uid];
+  const accessTokenPair = [tokenKey, accessToken];
+  const clientPair = [clientKey, client];
+  const uidPair = [uidKey, uid];
   try {
     AsyncStorage.multiSet([accessTokenPair, clientPair, uidPair]);
   } catch (e) {
@@ -14,7 +16,7 @@ export const setLoginData = (accessToken: string, client: string, uid: string) =
 };
 
 export const getLoginData = async () => {
-  const [accessToken, client, uid] = (await AsyncStorage.multiGet(['@accessToken', '@client', '@uid'])).map(
+  const [accessToken, client, uid] = (await AsyncStorage.multiGet([tokenKey, clientKey, uidKey])).map(
     (pairOfValues) => pairOfValues[1]
   );
 
