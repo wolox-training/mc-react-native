@@ -15,7 +15,7 @@ export interface Books {
   year: string;
   image: string | null;
 }
-// "author": "Tara Westover", "created_at": "2019-02-25T20:38:50.380Z", "genre": "Literary fiction", "id": 8, "image": [Object], "publisher": "Random House Publishing Group", "title": "Educated: A Memoir", "updated_at": "2019-02-25T20:38:50.380Z", "year": "2019"}
+
 export interface State {
   bookReducer: {
     books: Books;
