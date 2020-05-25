@@ -6,24 +6,35 @@ import { State, Books } from '@interfaces';
 import colors from '@constants/colors';
 import BookItem from './components/BookItem';
 import LibrarySeparator from './components/LibrarySeparator';
+import EmptyLibrary from './components/EmptyLibrary';
 import styles from './styles';
 
 interface dataBook {
   item: Books;
 }
 
-const Library = () => {
+interface librarySearched {
+  route: {
+    params?: {
+      searchingMode?: boolean;
+    };
+  };
+}
+
+const Library = ({ route: { params } }: librarySearched) => {
   const renderItem = ({ item: { id, title, author, image, year, genre } }: dataBook) => (
     <BookItem key={id} title={title} author={author} imageUri={image.url} year={year} genre={genre} />
   );
   const dispatch = useDispatch();
   const stillLoading = useSelector<State, boolean>((state) => state.bookReducer.booksLoading);
   const LibraryData = useSelector<State, Books>((state) => state.bookReducer.books);
+  const SearchedData = useSelector<State, Books>((state) => state.bookReducer.booksFiltered);
   const keyExtractor = (item: { id: number }) => `${item.id}`;
+  const searchedView = params?.searchingMode;
 
   useEffect(() => {
-    dispatch(bookActions.getBooks());
-  }, [dispatch]);
+    if (!searchedView) dispatch(bookActions.getBooks());
+  }, [dispatch, searchedView]);
 
   return (
     <View style={styles.container}>
@@ -31,10 +42,11 @@ const Library = () => {
         <ActivityIndicator size="large" color={colors.black} />
       ) : (
         <FlatList
-          data={LibraryData}
+          data={searchedView ? SearchedData : LibraryData}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           ItemSeparatorComponent={LibrarySeparator}
+          ListEmptyComponent={EmptyLibrary}
         />
       )}
     </View>
