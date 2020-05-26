@@ -16,7 +16,8 @@ module.exports = {
           '@services': './src/services',
           '@utils': './src/utils',
           '@components': './src/app/components',
-          '@localStore': './src/services/localStorage'
+          '@localStore': './src/services/localStorage',
+          '@mocks': './__mocks__'
         }
       }
     ]
