@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 import { wipeLoginData } from '@localStore';
 import { useDispatch } from 'react-redux';
 import actionCreators from '@redux/login/actions';
@@ -12,7 +12,12 @@ const LogoutHeader = () => {
   const logOut = () => {
     wipeLoginData();
     dispatch(actionCreators.clearLoginData());
-    navigation.navigate('Login');
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 1,
+        routes: [{ name: 'Login' }]
+      })
+    );
   };
   return (
     <TouchableOpacity onPress={logOut}>
