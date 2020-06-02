@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '@constants/colors';
+import { smallNumber } from '@constants/constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,8 +14,8 @@ const styles = StyleSheet.create({
     width: 300
   },
   icon: {
-    width: 15,
-    height: 15,
+    width: smallNumber,
+    height: smallNumber,
     marginHorizontal: 10
   }
 });

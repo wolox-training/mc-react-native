@@ -3,10 +3,10 @@ import SearchExtended from './components/SearchExtended';
 import SearchButton from './components/SearchButton';
 
 interface Props {
-  extended: true | false | undefined;
+  extended?: boolean;
 }
-const SearchHeader = (props: Props) => {
-  return props.extended ? <SearchExtended /> : <SearchButton />;
+const SearchHeader = ({ extended = false }: Props) => {
+  return extended ? <SearchExtended /> : <SearchButton />;
 };
 
 export default SearchHeader;

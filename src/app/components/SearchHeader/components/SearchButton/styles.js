@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { midNumber } from '@constants/constants';
 
 export default StyleSheet.create({
   headerRight: {
-    maxHeight: 30,
-    maxWidth: 30,
+    maxHeight: midNumber,
+    maxWidth: midNumber,
     marginRight: 12
   }
 });

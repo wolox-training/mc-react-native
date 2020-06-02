@@ -34,16 +34,16 @@ const LibraryStackScreen = () => {
       <LibraryStack.Screen
         name="Library"
         component={Library}
-        options={{ headerLeft: () => <LogoutHeader />, headerRight: () => <SearchHeader extended={false} /> }}
+        options={{ headerLeft: () => <LogoutHeader />, headerRight: () => <SearchHeader /> }}
       />
       <LibraryStack.Screen name="BookDetail" component={BookDetail} />
       <LibraryStack.Screen
         name="LibrarySearch"
         component={Library}
         options={{
-          headerTitle: () => <SearchHeader extended={true} />,
-          headerLeft: () => undefined,
-          headerRight: () => undefined
+          headerTitle: () => <SearchHeader extended />,
+          headerLeft: () => null,
+          headerRight: () => null
         }}
       />
     </LibraryStack.Navigator>

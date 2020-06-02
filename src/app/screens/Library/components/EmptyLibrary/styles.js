@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '@constants/colors';
+import { bigNumber } from '@constants/constants';
 
 export default StyleSheet.create({
   container: {
@@ -8,8 +9,8 @@ export default StyleSheet.create({
   },
   image: {
     marginVertical: 20,
-    maxHeight: 50,
-    maxWidth: 50
+    maxHeight: bigNumber,
+    maxWidth: bigNumber
   },
   title: {
     fontSize: 18,
