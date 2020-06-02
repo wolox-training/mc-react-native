@@ -1,7 +1,7 @@
 const initialState = {
-  token: '',
+  token: null,
   waitingResponse: false,
-  error: ''
+  error: null
 };
 
 const reducer = (state = initialState, action) => {

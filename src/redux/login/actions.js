@@ -17,7 +17,7 @@ const actionCreators = {
         payload: {
           token: response.headers['access-token'],
           waitingResponse: false,
-          error: ''
+          error: null
         }
       });
     } else {
