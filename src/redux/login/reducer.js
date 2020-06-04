@@ -1,9 +1,9 @@
 const initialState = {
-  token: '',
   client: '',
   uid: '',
+  token: null,
   waitingResponse: false,
-  error: ''
+  error: null
 };
 
 const reducer = (state = initialState, action) => {
