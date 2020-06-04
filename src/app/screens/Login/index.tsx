@@ -3,8 +3,9 @@ import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import actionCreators from '@redux/login/actions';
 import { emailValidate, pwdValidate } from '@utils';
+import { getLoginData } from '@localStore';
 import LoginScreen from './layout';
-import { State } from '../../interfaces';
+import { State, StorageLoginData } from '../../interfaces';
 
 function Login() {
   const [email, setEmail] = useState();
@@ -28,6 +29,12 @@ function Login() {
   const validateEmail = () => (emailValidate(email) ? setInputError(false) : setInputError(true));
 
   useEffect(() => {
+    getLoginData().then((data: StorageLoginData) => {
+      if (data.accessToken) {
+        dispatch(actionCreators.setTokenFromStore(data));
+        navigation.navigate('TabNavigator');
+      }
+    });
     if (hasToken) {
       navigation.navigate('TabNavigator');
     }

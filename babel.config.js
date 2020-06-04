@@ -15,7 +15,8 @@ module.exports = {
           '@redux': './src/redux',
           '@services': './src/services',
           '@utils': './src/utils',
-          '@components': './src/app/components'
+          '@components': './src/app/components',
+          '@localStore': './src/localStorage'
         }
       }
     ]
