@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
-import { emailValidate, pwdValidate } from '@utils';
 import actionCreators from '@redux/login/actions';
+import { emailValidate, pwdValidate } from '@utils';
 import LoginScreen from './layout';
+import { State } from '../../interfaces';
 
 function Login() {
   const [email, setEmail] = useState();
   const [pwd, setPwd] = useState();
+  const [inputError, setInputError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const signIn = () => dispatch(actionCreators.signIn(email, pwd));
-  const status = useSelector((state) => state.loginReducer.token);
+  const hasToken = !!useSelector<State, string>((state) => state.loginReducer.token);
+  const stillLoading = useSelector<State, boolean>((state) => state.loginReducer.waitingResponse);
+  const hasError = !!useSelector<State, string>((state) => state.loginReducer.error);
   const redirectHome = () => {
-    // TODO: This is only for test the navigability, must be change later for a real authentication
     if (emailValidate(email) && pwdValidate(pwd)) {
       signIn();
     } else {
-      console.warn('Invalid Password or Email');
+      setInputError(true);
     }
   };
 
+  const validateEmail = () => (emailValidate(email) ? setInputError(false) : setInputError(true));
+
   useEffect(() => {
-    if (status) {
+    if (hasToken) {
       navigation.navigate('TabNavigator');
     }
   });
@@ -36,6 +41,10 @@ function Login() {
       redirectHome={redirectHome}
       setEmail={setEmail}
       setPwd={setPwd}
+      loading={stillLoading}
+      hasError={hasError}
+      inputError={inputError}
+      validateEmail={validateEmail}
       handleShowPassword={handleShowPassword}
       showPassword={showPassword}
     />

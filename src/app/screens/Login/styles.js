@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.dustyGrey,
     fontSize: 30,
+    textAlign: 'left',
     fontWeight: 'bold',
     width: 275
   },
@@ -30,6 +31,11 @@ const styles = StyleSheet.create({
   },
   logoImage: {
     marginBottom: 100
+  },
+  errorText: {
+    color: colors.red,
+    fontSize: 14,
+    textAlign: 'center'
   }
 });
 

@@ -14,7 +14,8 @@ module.exports = {
           '@screens': './src/app/screens',
           '@redux': './src/redux',
           '@services': './src/services',
-          '@utils': './src/utils'
+          '@utils': './src/utils',
+          '@components': './src/app/components'
         }
       }
     ]

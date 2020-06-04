@@ -1,20 +1,26 @@
 const initialState = {
-  token: undefined
+  token: null,
+  waitingResponse: false,
+  error: null
 };
 
 const reducer = (state = initialState, action) => {
+  const { payload } = action;
   switch (action.type) {
     case 'SIGN_IN':
       return {
-        token: action.payload
+        waitingResponse: payload.waitingResponse
       };
     case 'SIGN_IN_SUCCESS':
       return {
-        token: action.payload
+        token: payload.token,
+        waitingResponse: payload.waitingResponse,
+        error: payload.error
       };
     case 'SIGN_IN_FAILURE':
       return {
-        token: action.payload
+        waitingResponse: payload.waitingResponse,
+        error: payload.error
       };
     default:
       return state;

@@ -6,7 +6,7 @@ interface Props {
   text: string;
   inverted?: boolean;
   whiteBorder?: boolean;
-  onPress?: Function;
+  onPress?: (event: object) => void;
 }
 const Wbutton = ({ text, inverted = false, whiteBorder = false, onPress }: Props) => {
   return (

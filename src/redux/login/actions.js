@@ -8,18 +8,25 @@ export const actions = {
 
 const actionCreators = {
   signIn: (email, pwd) => async (dispatch) => {
-    dispatch({ type: actions.SIGN_IN });
+    const waitingResponse = true;
+    dispatch({ type: actions.SIGN_IN, payload: { waitingResponse } });
     const response = await login(email, pwd);
     if (response.ok) {
-      // TODO: all actions make the same thing, this will be change when I need store data (in another card)
       dispatch({
         type: actions.SIGN_IN_SUCCESS,
-        payload: response.ok
+        payload: {
+          token: response.headers['access-token'],
+          waitingResponse: false,
+          error: null
+        }
       });
     } else {
       dispatch({
         type: actions.SIGN_IN_FAILURE,
-        payload: response.ok
+        payload: {
+          error: `Status ${response.status}: ${response.problem}`,
+          waitingResponse: false
+        }
       });
     }
   }

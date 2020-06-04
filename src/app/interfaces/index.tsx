@@ -11,5 +11,10 @@ export interface Books {
 }
 
 export interface State {
-  fullComments: Books;
+  bookReducer: { fullComments: Books };
+  loginReducer: {
+    token: string | null;
+    error: string | null;
+    waitingResponse: boolean;
+  };
 }
