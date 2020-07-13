@@ -64,5 +64,14 @@ export default StyleSheet.create({
   fullScreen: {
     height: '100%',
     width: '100%'
+  },
+  gradient: {
+    borderRadius: 100,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    width: 275,
+    height: 44,
+    alignSelf: 'center',
+    justifyContent: 'center'
   }
 });

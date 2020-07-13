@@ -31,6 +31,7 @@
     "react-native": "0.62.2",
     "react-native-config": "^1.0.0",
     "react-native-gesture-handler": "^1.6.1",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-mock-render": "^0.1.9",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^0.7.3",
@@ -75,6 +76,13 @@
     "transformIgnorePatterns": [
       "/node_modules/@react-native-community/async-storage/(?!(lib))"
     ],
-    "moduleFileExtensions": ["js", "json", "jsx", "ts", "tsx", "node"]
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx",
+      "node"
+    ]
   }
 }
