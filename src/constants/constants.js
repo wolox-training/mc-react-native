@@ -129,3 +129,9 @@ export const Comments = [
     avatarImage: avatar1
   }
 ];
+
+export const smallNumber = 15;
+
+export const midNumber = 30;
+
+export const bigNumber = 50;
