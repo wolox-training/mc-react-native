@@ -3,7 +3,7 @@ export const initialState = {
   client: '',
   uid: '',
   waitingResponse: false,
-  error: ''
+  error: null
 };
 
 const reducer = (state = initialState, action) => {

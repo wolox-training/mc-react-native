@@ -22,10 +22,10 @@ export interface State {
     booksLoading: boolean;
   };
   loginReducer: {
-    token: string;
     client: string;
     uid: string;
-    error: string;
+    token: string | null;
+    error: string | null;
     waitingResponse: boolean;
   };
 }

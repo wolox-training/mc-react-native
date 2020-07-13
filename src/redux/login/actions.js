@@ -25,7 +25,7 @@ const actionCreators = {
           client,
           uid,
           waitingResponse: false,
-          error: ''
+          error: null
         }
       });
     } else {
