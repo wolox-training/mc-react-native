@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   token: '',
   client: '',
   uid: '',
@@ -26,6 +26,8 @@ const reducer = (state = initialState, action) => {
         waitingResponse: payload.waitingResponse,
         error: payload.error
       };
+    case 'WIPE_LOGIN':
+      return initialState;
     default:
       return state;
   }

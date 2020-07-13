@@ -28,3 +28,8 @@ export const getLoginData = async () => {
 
   return data;
 };
+
+export const wipeLoginData = async () => {
+  const keys = [tokenKey, clientKey, uidKey];
+  await AsyncStorage.multiRemove(keys);
+};
