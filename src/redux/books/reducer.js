@@ -1,23 +1,18 @@
+import { createReducer, completeReducer } from 'redux-recompose';
 import { actionTypes } from './actions';
 
 const initialState = {
   books: [],
+  booksFiltered: [],
   booksLoading: false,
   booksError: null
 };
 
-export default function reducer(state = initialState, action) {
-  const { type, payload } = action;
-  switch (type) {
-    case actionTypes.GET_BOOKS:
-      return { ...state, booksLoading: true };
-
-    case actionTypes.GET_BOOKS_SUCCESS:
-      return { ...state, books: payload, booksLoading: false };
-
-    case actionTypes.GET_BOOKS_FAILURE:
-      return { ...state, booksLoading: false, booksError: payload };
-    default:
-      return state;
+const reducerDescription = {
+  primaryActions: [actionTypes.GET_BOOKS],
+  override: {
+    [actionTypes.SET_FOUND_BOOKS]: (state, action) => ({ ...state, booksFiltered: action.payload })
   }
-}
+};
+
+export default createReducer(initialState, completeReducer(reducerDescription));

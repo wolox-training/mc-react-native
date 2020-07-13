@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import colors from '@constants/colors';
 import Wbutton from '../../../../components/Wbutton';
 import styles from './styles';
 import { imageMissing } from '../../../../../constants/constants';
@@ -22,7 +24,13 @@ const BookDetail = ({ title, author, imageUri, year, genre }: BookDetailInterfac
         </View>
       </View>
       <Wbutton text="ADD TO WISHLIST" />
-      <Wbutton text="RENT" inverted={true} />
+      <LinearGradient
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        colors={colors.ceruleanToTurquoise}
+        style={styles.gradient}>
+        <Wbutton text="RENT" inverted={true} gradiantSet={true} />
+      </LinearGradient>
     </View>
   );
 };
