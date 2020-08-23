@@ -30,5 +30,9 @@ export default StyleSheet.create({
   },
   whiteBorder: {
     borderColor: colors.white
+  },
+  forGradiant: {
+    backgroundColor: colors.ceruleanTransparency,
+    marginBottom: 0
   }
 });

@@ -1,16 +1,18 @@
+import { createReducer, completeReducer } from 'redux-recompose';
+import { actionTypes } from './actions';
+
 const initialState = {
-  fullComments: false
+  books: [],
+  booksFiltered: [],
+  booksLoading: false,
+  booksError: null
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'BOOK_TOOGLE_VIEW_ALL':
-      return {
-        fullComments: !state.fullComments
-      };
-    default:
-      return state;
+const reducerDescription = {
+  primaryActions: [actionTypes.GET_BOOKS],
+  override: {
+    [actionTypes.SET_FOUND_BOOKS]: (state, action) => ({ ...state, booksFiltered: action.payload })
   }
 };
 
-export default reducer;
+export default createReducer(initialState, completeReducer(reducerDescription));

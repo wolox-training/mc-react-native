@@ -1,7 +1,7 @@
-const initialState = {
+export const initialState = {
+  token: '',
   client: '',
   uid: '',
-  token: null,
   waitingResponse: false,
   error: null
 };
@@ -26,6 +26,8 @@ const reducer = (state = initialState, action) => {
         waitingResponse: payload.waitingResponse,
         error: payload.error
       };
+    case 'WIPE_LOGIN':
+      return initialState;
     default:
       return state;
   }

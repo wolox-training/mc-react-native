@@ -4,7 +4,8 @@ import { setLoginData } from '@localStore';
 export const actions = {
   SIGN_IN: 'SIGN_IN',
   SIGN_IN_SUCCESS: 'SIGN_IN_SUCCESS',
-  SIGN_IN_FAILURE: 'SIGN_IN_FAILURE'
+  SIGN_IN_FAILURE: 'SIGN_IN_FAILURE',
+  WIPE_LOGIN: 'WIPE_LOGIN'
 };
 
 const actionCreators = {
@@ -50,6 +51,9 @@ const actionCreators = {
         error: ''
       }
     });
+  },
+  clearLoginData: () => (dispatch) => {
+    dispatch({ type: actions.WIPE_LOGIN });
   }
 };
 

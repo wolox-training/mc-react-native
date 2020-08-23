@@ -7,11 +7,20 @@ export interface BookDetailInterface {
 }
 
 export interface Books {
-  fullComments: boolean;
+  id: number;
+  author: string;
+  title: string;
+  genre: string;
+  publisher: string;
+  year: string;
+  image: string | null;
 }
 
 export interface State {
-  bookReducer: { fullComments: Books };
+  bookReducer: {
+    books: Books;
+    booksLoading: boolean;
+  };
   loginReducer: {
     client: string;
     uid: string;
